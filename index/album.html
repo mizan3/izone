@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<title></title>
+<style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background-color: #d4e3dd;
+}
+/*팝업 박스*/
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+.popbox_main_content button{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.popbox_main_content{
+  position: fixed;
+  top:0;
+  right: 0;
+  margin-right: 50px;
+  margin-top: 40px;
+  cursor: pointer;
+
+}
+.popbox.visible{
+  opacity:1;
+  z-index: 999;
+    transition:opacity 0.3s ease;
+}
+.popbox.opened{
+  display: block;
+}
+
+.popbox_locked .popbox_main_content.popbox_blur{
+  filter:blur(15px);
+}
+
+html.popbox_locked{
+    overflow: hidden;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.popbox{
+  z-index: -999;
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+    will-change: opacity;
+    transition:opacity 0.3s ease;
+    opacity:0;
+    will-change: opacity;
+  background: rgba(60, 52, 66, 0.7);
+  padding:18px;
+  padding-top:5%;
+  overflow-y: auto;
+  display: none;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size:3em;
+}
+
+
+.popbox_container{
+  border-radius:5px;
+  margin-top: calc(10%);
+
+  padding: 18px;
+  margin-left:auto;
+  margin-right:auto;
+  background:transparent;
+  max-width:400px;
+ 
+}
+.popbox_container a{
+  transition: all 1s ease;
+}
+.popbox_container a:hover{
+  color:darkgray;
+  letter-spacing: 3px;
+}
+
+.burger{
+  height: 30px;
+  width: 40px;
+  border-top: solid 4px white;
+  border-bottom: solid 4px white;
+
+}
+
+.burgerin{
+  margin-top:9px;
+  width: 40px;
+  border-top: solid 4px white;
+}
+.popbox button{
+  background: transparent;
+  font-family: gothic; 
+  color:white;
+  font-size: 0.7em;
+  border:none ;
+  margin-top: 30px;
+  cursor:pointer;
+  transition: all 1s ease;
+}
+.popbox button:hover{
+  color:black;
+  font-weight: bold;
+}
+
+/*-----------------------------*/
+
+
+
+
+:root {
+  --grow-time: 5s;
+  --fade-time: 3s;
+}
+
+
+.circle {
+  animation: grow var(--grow-time) forwards, fade var(--fade-time) calc(var(--grow-time) - var(--fade-time)) forwards;
+  background: #81ecec;
+  border-radius: 100%;
+  height: 2px;
+  left: 20vw;
+  position: absolute;
+  top: 20vh;
+
+          transform: translateZ(0);
+  width: 2px;
+}
+
+
+@keyframes grow {
+  0% {
+            transform: translateZ(0) scale(0);
+  }
+  
+  100% {
+
+            transform: translateZ(0) scale(100);
+  }
+}
+
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+  }
+}
+
+/*--------------------------*/
+
+
+.albumcon{
+	margin: 0 auto;
+	width: 1300px;
+	margin-top:100px;
+}
+.albumcon1{
+	width: 400px;
+}
+
+.alb{
+	width: 400px;
+	position: absolute;
+}
+.albb{
+	width: 250px;
+	position: absolute;
+}
+.alb1{
+	
+	animation: alb1 2s ease forwards;
+}
+@keyframes alb1{
+	from{transform: translate(-300px,-100px);}
+	to{transform: translate(-200px,-50px);}
+
+}
+
+.alb2{
+	animation: alb2 2s ease forwards;
+}
+@keyframes alb2{
+	from{transform: translate(0px,-100px);}
+	to{transform: translate(-120px,-20px);}
+
+}
+
+.alb3{
+	
+	animation: alb3 2s ease forwards;
+}
+@keyframes alb3{
+	from{transform: translate(-200px,-50px);}
+	to{transform: translate(-150px,0px);}
+
+}
+
+.alb4{
+	animation: alb4 2s ease forwards;
+}
+@keyframes alb4{
+	from{transform: translate(50px,100px);}
+	to{transform: translate(-20px,80px);}
+
+}
+
+
+
+
+
+.spacer{
+			width: 100%;
+			height: 100px;
+		}
+.textbox{
+	font-family: 'Nanum Myeongjo', serif;
+	text-align: left;
+	margin-left: 500px;
+	width: 350px;
+	transform: translate(0,50px);
+	word-break: break-all;
+	font-size: 15px;
+	font-weight: lighter;
+	color:#5b5b5b;
+
+}
+.textbox2{
+	font-family: 'Nanum Myeongjo', serif;
+	text-align: left;
+	margin-left: 870px;
+	width: 350px;
+	transform: translate(0,-258px);
+	word-break: break-all;
+	font-size: 15px;
+	font-weight: lighter;
+	color:#5b5b5b;
+}
+.titl{
+	color:#5b5b5b;
+	font-family: 'Abril Fatface', cursive;
+	font-size: 40px;
+	transform: translate(140px,350px);
+	width: 200px;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div data-popbox-id="mypopbox1" class="popbox">
+   <div class="popbox_container">
+    <!--html의 a를 이용한 페이지 이동이 작동을 안해서 함수로 사용함.-->
+    <a href="index.html" onclick="function1()">1.main</a><br>
+    <a href="" onclick="function2()">2.gallery</a><br>
+    <a href="" onclick="function3()">3.album</a><br>
+    <button data-popbox-close="mypopbox1">Close</button>
+   </div>
+ </div>
+
+ <div class="popbox_main_content">
+  
+  <button data-popbox-target="mypopbox1">
+  	<div class="burger">
+        <div class="burgerin"></div>
+    </div>
+  </button>
+    
+ </div>
+<div class="spacer"></div>
+<div class="albumcon">
+	<div class="albumcon1">
+		<img src="img/album1.png" class="alb alb1">
+		<img src="img/album2.png" class="alb alb2">
+		
+	</div>
+	<div class="titl">HEART*IZ</div>
+	<div class="textbox">
+			지난 2018년 정식 데뷔와 동시에 연일 기록을 경신하며 국내외 음원 및 음반 차트 석권, 음악 방송 1위, 신인상 5관왕 등 글로벌 인기를 과시하고 있는 아이즈원이 4월 1일 두 번째 미니 앨범 로 가요계 컴백을 알렸다.
+			<br>
+			<br>
+			<br>
+			작년 10월 한국 데뷔 앨범 를 발매한 데 이어 올해 2월 일본 데뷔 싱글 <좋아한다고 말하게 하고 싶어(好きと言わせたい)>로 초동 22만장을 돌파, 발매와 동시에 일본 오리콘 차트 데일리 싱글 1위를 차지하는 등 한일 양국 가요계에 성공적인 첫 발을 내디딘 아이즈원이 미니 2집 <로 약 6개월 만에 국내 전격 컴백, 또 한 번의 기록 세우기에 나서며 차세대 글로벌 대세로 확실한 자리매김에 나선다.수많은 리스너들의 뜨거운 관심 속 발매되는 이번 앨범 는 지난 데뷔 앨범을 성공으로 이끈 한성수 프로듀서와 또 한 번 의기 투합에 나섰다.
+			<br>
+			<br>
+			<br>
+			 이번 앨범은 사랑과 마음을 의미하는 영단어 ‘Heart’와 ‘IZ*ONE(아이즈원)’의 합성어로, 아이즈원이 표현하고자 하는 진심의 이야기를 담은 앨범이라는 뜻을 가지고 있다. 일부 수록곡에는 멤버들이 직접 작사에 참여하는 등 아티스트로서 더욱 폭 넓고 깊어진 음악적 감성까지 담아냈다.
+
+	</div>
+	<div class="textbox2">
+			HEART*IZ(하트아이즈)는 앞서 ‘라비앙로즈 (La Vie en Rose)’를 통해 보여준 아이즈원의 뜨거운 열정에 사랑과 격려를 더해 이를 전하고자 하는 마음으로 탄생했다. 지난 데뷔 앨범에서는 아이즈원이 피워내고자 하는 뜨거운 열정을 ‘장미’로 표현해 냈다면 이번 앨범에서는 팬들을 비롯해 아이즈원의 음악을 듣는 모든 이들에게 응원의 메시지를 전달, 진정성 넘치는 마음을 확인할 수 있다. 특히 타이틀곡 ‘비올레타’는 대중들과 팬들에게 받은 에너지와 많은 사랑에 보답하기 위한 답가이자 아이즈원이 들려주는 응원가 같은 느낌을 선사할 것이다.
+			<br>
+			<br>
+			<br>
+			또한 타이틀곡 ‘비올레타’는 동화 ‘행복한 왕자’의 스토리 일부분을 착안해 탄생했다. 멤버들이 사랑하고 응원하는 대상을 제비꽃인 ‘비올레타’로 행복을 상징하는 ‘사파이어’를 제비꽃에게 전달하는 ‘제비’를 아이즈원으로 재해석해 모든 이들에게 존재 자체만으로도 빛이 나는 사람이라는 열정 가득한 응원의 메시지를 전하고 있다.
+
+	</div>
+	
+</div>
+<div class="albumcon">
+	<div class="albumcon1">
+		<img src="img/album3.jpg" class="albb alb3">
+		<img src="img/album4.jpg" class="albb alb4">
+		
+	</div>
+	<div class="titl">COLOR*IZ</div>
+	<div class="textbox">
+			지난 2018년 정식 데뷔와 동시에 연일 기록을 경신하며 국내외 음원 및 음반 차트 석권, 음악 방송 1위, 신인상 5관왕 등 글로벌 인기를 과시하고 있는 아이즈원이 4월 1일 두 번째 미니 앨범 로 가요계 컴백을 알렸다.
+			<br>
+			<br>
+			<br>
+			작년 10월 한국 데뷔 앨범 를 발매한 데 이어 올해 2월 일본 데뷔 싱글 <좋아한다고 말하게 하고 싶어(好きと言わせたい)>로 초동 22만장을 돌파, 발매와 동시에 일본 오리콘 차트 데일리 싱글 1위를 차지하는 등 한일 양국 가요계에 성공적인 첫 발을 내디딘 아이즈원이 미니 2집 <로 약 6개월 만에 국내 전격 컴백, 또 한 번의 기록 세우기에 나서며 차세대 글로벌 대세로 확실한 자리매김에 나선다.수많은 리스너들의 뜨거운 관심 속 발매되는 이번 앨범 는 지난 데뷔 앨범을 성공으로 이끈 한성수 프로듀서와 또 한 번 의기 투합에 나섰다.
+			<br>
+			<br>
+			<br>
+			 이번 앨범은 사랑과 마음을 의미하는 영단어 ‘Heart’와 ‘IZ*ONE(아이즈원)’의 합성어로, 아이즈원이 표현하고자 하는 진심의 이야기를 담은 앨범이라는 뜻을 가지고 있다. 일부 수록곡에는 멤버들이 직접 작사에 참여하는 등 아티스트로서 더욱 폭 넓고 깊어진 음악적 감성까지 담아냈다.
+
+	</div>
+	<div class="textbox2">
+			HEART*IZ(하트아이즈)는 앞서 ‘라비앙로즈 (La Vie en Rose)’를 통해 보여준 아이즈원의 뜨거운 열정에 사랑과 격려를 더해 이를 전하고자 하는 마음으로 탄생했다. 지난 데뷔 앨범에서는 아이즈원이 피워내고자 하는 뜨거운 열정을 ‘장미’로 표현해 냈다면 이번 앨범에서는 팬들을 비롯해 아이즈원의 음악을 듣는 모든 이들에게 응원의 메시지를 전달, 진정성 넘치는 마음을 확인할 수 있다. 특히 타이틀곡 ‘비올레타’는 대중들과 팬들에게 받은 에너지와 많은 사랑에 보답하기 위한 답가이자 아이즈원이 들려주는 응원가 같은 느낌을 선사할 것이다.
+			<br>
+			<br>
+			<br>
+			또한 타이틀곡 ‘비올레타’는 동화 ‘행복한 왕자’의 스토리 일부분을 착안해 탄생했다. 멤버들이 사랑하고 응원하는 대상을 제비꽃인 ‘비올레타’로 행복을 상징하는 ‘사파이어’를 제비꽃에게 전달하는 ‘제비’를 아이즈원으로 재해석해 모든 이들에게 존재 자체만으로도 빛이 나는 사람이라는 열정 가득한 응원의 메시지를 전하고 있다.
+
+	</div>
+	
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+
+var	i = 1;
+
+addCircles();
+
+function addCircles() {
+if(i<40){ // 재귀호출 사용, 40번 반복
+	++i
+  	setTimeout(() => {
+  	  addCircle(...randomPosition());
+ 	  addCircles();
+	  }, 100);
+  }
+}
+
+function addCircle(x, y) {//x값과 y값을 받아서 점점커졌다 사라지는 원을 생성
+  var circle = document.createElement('div');//div 이용한 원 생성
+  var animationTime = Math.round(Math.random() * 5);
+  circle.classList.add('circle'); //원에 circle클래스 추가
+  circle.style.left = x + 'vw'; //좌표지정
+  circle.style.top = y + 'vh'; //좌표지정
+  circle.style.backgroundColor = randomColor(); //색 지정
+  circle.style.setProperty('--grow-time', `${animationTime}s`);//애니메이션 시간
+
+  requestAnimationFrame(() => {
+    document.body.appendChild(circle);
+    setTimeout(removeCircle.bind(this, circle), animationTime * 1000);
+    //animation time*1000만큼의 딜레이 후 removeCircle함수 실행
+  });
+}
+
+function removeCircle(circle) {//circle삭제
+  document.body.removeChild(circle);
+}
+
+function randomPosition() { //좌표 랜덤값 리턴
+  return [
+  Math.random() * 100 + 1,
+  Math.random() * 100 + 1];
+
+}
+
+function randomColor() {//배열내 색중 랜덤하게 하나를 리턴
+  const colors = [
+  '#81ecec',
+  '#74b9ff',
+  '#a29bfe',
+  '#ffeaa7',
+  '#fab1a0',
+  '#ff7675',
+  '#fd79a8'];
+
+
+  return colors[Math.round(Math.random() * colors.length)];
+}
+</script>
+<script src="js/popbox.js">
+  //팝업박스
+</script>
+<script type="text/javascript">//팝업박스
+var popbox = new Popbox({
+      blur:true,
+});
+</script>
+<script type="text/javascript">
+  function function1(){
+  		window.location.replace('index.html');
+  }
+  function function2(){
+  		window.location.replace('gallery.html');
+  }
+  function function3(){
+  		window.location.replace('album.html');
+  }
+</script>
+</body>
+</html>

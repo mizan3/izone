@@ -1,0 +1,517 @@
+a {
+  display: block;
+  color : white;
+  text-decoration: none;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  background-color:#b6e3bc;
+  
+  font-family: sans-serif;
+  padding-top: 500px;
+}
+.container{
+    /*
+
+    */
+}
+
+
+
+/*팝업*/
+.popbox_main_content button{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.popbox_main_content{
+  position: fixed;
+  top:0;
+  right: 0;
+  margin-right: 50px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+.popbox.visible{
+  opacity:1;
+  z-index: 999;
+    transition:opacity 0.3s ease;
+}
+.popbox.opened{
+  display: block;
+}
+
+.popbox_locked .popbox_main_content.popbox_blur{
+  filter:blur(15px);
+}
+
+html.popbox_locked{
+    overflow: hidden;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.popbox{
+  z-index: -999;
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+    will-change: opacity;
+    transition:opacity 0.3s ease;
+    opacity:0;
+    will-change: opacity;
+  background: rgba(60, 52, 66, 0.7);
+  padding:18px;
+  padding-top:5%;
+  overflow-y: auto;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size:3em;
+  display: none;
+}
+
+
+.popbox_container{
+  border-radius:5px;
+  margin-top: calc(10%);
+
+  padding: 18px;
+  margin-left:auto;
+  margin-right:auto;
+  background:transparent;
+  max-width:400px;
+ 
+}
+.popbox_container a{
+  transition: all 1s ease;
+}
+.popbox_container a:hover{
+  color:darkgray;
+  letter-spacing: 3px;
+}
+
+.burger{
+  height: 30px;
+  width: 40px;
+  border-top: solid 4px white;
+  border-bottom: solid 4px white;
+
+}
+
+.burgerin{
+  margin-top:9px;
+  width: 40px;
+  border-top: solid 4px white;
+}
+.popbox button{
+  background: transparent;
+  font-family: gothic; 
+  color:white;
+  font-size: 0.7em;
+  border:none ;
+  margin-top: 30px;
+  cursor:pointer;
+  transition: all 1s ease;
+}
+.popbox button:hover{
+  color:black;
+  font-weight: bold;
+}
+
+/*---------*/
+
+.header {
+  height: 600px;
+}
+.title{
+    height: 200px;
+    width: 480px;
+    margin:0 auto;
+    background-size:30%;
+    animation: zoomIn 2s ease;
+    margin-top: -300px;
+}
+
+.title img{
+    height: 200px;
+
+}
+.down{
+    margin-top: 100px;
+    text-align: center;
+    animation: slideInUp 2s infinite alternate ease-in-out;
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+}
+.down img{
+  display: block;
+  height: 60px;
+  width: 60px;
+  margin: auto;
+  transform: rotate(90deg);
+   
+}
+
+
+
+
+
+
+
+
+
+#animate1 {
+  
+  border-radius: 50%;
+  background-color: skyblue;
+  width: 400px;
+  height: 400px;scale: 50%;
+  bottom: calc(30%);
+  margin-left:  calc(50% - 200px);
+  opacity: 0.5;
+  transition: all;
+  transform: scale(0.5);
+}
+#m12 {
+  transform: translate(-138px,-138px);
+}
+
+/*빈공간용 css*/
+.spacer {
+  height: 1000px;
+}
+#spacer2{
+  height:2000px;
+  width: 100%;
+  background-image:linear-gradient(#b6e3bc, #ff99cc,#DB706C);
+}
+#spacer3{
+  width: 100%;
+  height: 700px;
+}
+#spacer4{
+  width: 100%;
+  height: 833px;
+}
+#spacer44{
+  width: 100%;
+  height: calc(1666px - 600px + 100px);
+}
+#spacer5{
+  width: 100%;
+  height: 500px;
+  background-color:#567ACE;
+}
+
+
+/*---------------*/
+/*트리거*/
+.trigr{/*오른쪽*/
+  height: 300px;
+  width: 300px;
+  margin-left: calc(100% - 400px);
+  font-family: 'Pacifico', cursive;
+
+}
+.trigr2{/*오른쪽*/
+  height: 300px;
+  width: 300px;
+  margin-left: calc(100% - 500px);
+  font-family: 'Pacifico', cursive;
+  margin-top:30px;
+}
+.trigl{/*왼쪽*/
+  height: 300px;
+  width: 300px;
+  margin-left: calc(100px);
+  font-family: 'Pacifico', cursive;
+}
+.trigl2{/*왼쪽*/
+  height: 300px;
+  width: 300px;
+  margin-left: calc(200px);
+  font-family: 'Pacifico', cursive;
+  margin-top:30px;
+}
+.trigmo{
+  border: 1px solid white;
+  transform: translate(-300px);
+  color:white;
+  height: 400px;
+  width:400px;
+  position:absolute;
+  font-family: 'Yeon Sung', cursive;
+  font-size: 1.3em;
+  padding: 10px
+}
+.trigmo2{
+  border: 1px solid black;
+  transform: translate(-300px);
+  color:black;
+  height: 400px;
+  width:400px;
+  position:absolute;
+  font-family: 'Yeon Sung', cursive;
+  font-size: 1.3em;
+  padding: 10px;
+}
+#mo1{
+  transform: translate(-400px,-200px);
+}
+#mo2{
+  transform: translate(-400px,100px);
+  z-index: 1 !important;
+}
+#mo3{
+  transform: translate(300px,-200px);
+}
+#mo4{
+  transform: translate(300px,100px);
+  z-index: 1 !important;
+}
+
+
+/*첫번째*/
+#trig1{
+  background-image: url("img/hye.jpg");
+  background-size: 350px 350px;
+
+}
+
+#trig1::after{
+  font-size: 2em;
+  position: absolute;
+  content: 'Kang Hye Won';
+  transform: translate(-230px,240px);
+
+}
+
+
+
+
+
+
+
+#trig2{
+  background-image: url("img/won.jpg");
+  background-size: 300px 350px;
+  
+}
+#trig2::before{
+  font-size: 2em;
+  position: absolute;
+  content: 'Jang Won Young';
+  transform: translate(-250px,0px);
+  z-index: 3 !important;
+}
+
+
+
+
+/*두번째*/
+
+#trig3{
+  background-image: url("img/saku.gif");
+  background-size: 350px 300px;
+}
+#trig3::before{
+  font-size: 2em;
+  position: absolute;
+  content: 'Miyawaki Sakura';
+  transform: translate(310px,240px);
+}
+#trig4{
+  background-image: url("img/chaeyeon.jpg");
+  background-size: 300px 430px;
+}
+#trig4::before{
+  font-size: 2em;
+  position: absolute;
+  content: 'Lee Chae Yeon';
+  transform: translate(310px, 0px);
+}
+
+
+/*세번째*/
+
+#trig5{
+  background-image: url("img/yuri.jpg");
+  background-size: 300px 450px;
+}
+#trig5::before{
+  font-size: 2em;
+  position: absolute;
+  content: 'Jo Yu Ri';
+  transform: translate(-150px,240px);
+}
+#trig6{
+  background-image: url("img/yena.gif");
+  background-size: 320px 300px;
+}
+#trig6::before{
+ font-size: 2em;
+ position: absolute;
+ content: 'Chae Ye Na';
+  transform: translate(-180px,0px);
+}
+
+/*네번째*/
+
+#trig7{
+  background-image: url("img/nako.gif");
+  background-position: center;
+  background-size: 300px 300px;
+}
+#trig7::before{
+  font-size: 2em;
+  position: absolute;
+  content: 'Yabuki Nako';
+  transform: translate(310px,240px);
+}
+#trig8{
+  background-image: url("img/chaewon.jpg");
+  background-position: 0% 15%;
+  background-size: 300px 500px;
+}
+#trig8::before{
+  font-size: 2em;
+  position: absolute;
+  content: 'Kim Chae Won';
+  transform: translate(310px,0px);
+}
+
+
+/*다섯번째*/
+
+#trig9{
+  background-image: url("img/minjoo.gif");
+  background-size: 400px 440px;
+}
+#trig9::before{
+    font-size: 2em;
+    position: absolute;
+     content: 'Kim Min Joo';
+    transform: translate(-230px,240px);
+}
+#trig10{
+  background-image: url("img/hito.jpg");
+  background-position: 30% 10%;
+  background-size: 400px 500px;
+
+}
+#trig10::before{
+    font-size: 2em;
+    position: absolute;
+    content: 'Honda Hitomi';
+    transform: translate(-230px,0px);
+
+}
+
+/*여섯번째*/
+
+#trig11{
+  background-image: url("img/eunbi.gif");
+  background-size: 350px 350px;
+}
+#trig11::before{
+  font-size: 2em;
+  position: absolute;
+  content: 'Kwon Eun Bi';
+  transform: translate(310px,240px);
+}
+#trig12{
+  background-image: url("img/yujin.jpg");
+  background-position: 10% 15%;
+  background-size: 400px 590px;
+}
+#trig12::before{
+  font-size: 2em;
+  position: absolute;
+  content: 'An Yu Jin';
+  transform: translate(310px,0px);
+}
+
+
+
+
+#trigger2 {
+  background-image: linear-gradient(#DB706C 1%,#F1D2E7 25%,#F3AA51 40%,#B7D3E9 ,white 70%,#567ACE);
+}
+
+.goto{
+  margin:0 auto;
+  width: 220px;
+  height:150px;
+  font-size: 3em;
+}
+.button1 {  
+  display: inline-block;  
+  border-radius: 4px; 
+  background-image: linear-gradient(to bottom, #d6f0e5, #6dc7a3);
+  border: none;  
+  color: white;
+  font-weight: bold;  
+  text-align: center;  
+  font-size: 28px;  
+  padding: 20px;  
+  width: 220px;  
+  transition: all 0.5s;  
+  cursor: pointer;  
+  margin: 5px;
+  height: 77px;
+  overflow: hidden;
+
+
+}
+.button1::after{
+  margin-top:100px;
+  opacity: 0;
+  content: 'IZ*ONE';
+  transition: all 0.5s;
+  
+}
+.button1:hover {
+  height: 100px;
+  background-image: linear-gradient(to bottom, #d6f0e5, #6dc7a3);
+  color: #567ACE;
+}
+.button1:hover::after{
+  opacity: 1;
+  margin-top:0px;
+
+
+}
+
+.button1 span {  
+  cursor: pointer;  
+  display: inline-block;  
+  position: relative;  
+  transition: all 0.5s ;
+}
+.button1 span::after {
+  content: '\00bb'; 
+  position: absolute;  
+  opacity: 0;  
+  top: 0;  
+  right: -20px;  
+  transition: all 0.5s ;
+}
+.button1:hover span {  
+  padding-right: 25px;
+}
+.button1:hover span::after {  
+  opacity: 1.0;  
+  right: 0;
+}

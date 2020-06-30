@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+  <script type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="lightbox.css">
+
+	<style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 80px;
+  text-align: center;
+  background-color: #d4e3dd;
+}
+/*원 랜덤 생성*/
+ :root {
+  --grow-time: 5s;
+  --fade-time: 3s;
+}
+
+
+.controls {
+  position: relative;
+  z-index: 2;
+}
+
+.controls__label {
+  display: block;
+  font-family: Menlo;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.controls__slider {
+  width: 200px;
+}
+
+.circle {
+  animation: grow var(--grow-time) forwards, fade var(--fade-time) calc(var(--grow-time) - var(--fade-time)) forwards;
+  background: #81ecec;
+  border-radius: 100%;
+  height: 2px;
+  left: 20vw;
+  position: absolute;
+  top: 20vh;
+  transform: translateZ(0);
+  width: 2px;
+}
+
+@keyframes grow {
+  0% {
+            transform: translateZ(0) scale(0);
+  }
+  
+  100% {
+            transform: translateZ(0) scale(100);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/*팝업 박스*/
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+.popbox_main_content button{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.popbox_main_content{
+  position: fixed;
+  top:0;
+  right: 0;
+  margin-right: 50px;
+  margin-top: 40px;
+  cursor: pointer;
+
+}
+.popbox.visible{
+  opacity:1;
+  z-index: 999;
+    transition:opacity 0.3s ease;
+}
+.popbox.opened{
+  display: block;
+}
+
+.popbox_locked .popbox_main_content.popbox_blur{
+  filter:blur(15px);
+}
+
+html.popbox_locked{
+    overflow: hidden;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.popbox{
+  z-index: -999;
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+    will-change: opacity;
+    transition:opacity 0.3s ease;
+    opacity:0;
+    will-change: opacity;
+  background: rgba(60, 52, 66, 0.7);
+  padding:18px;
+  padding-top:5%;
+  overflow-y: auto;
+  display: none;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size:3em;
+}
+
+
+.popbox_container{
+  border-radius:5px;
+  margin-top: calc(10%);
+
+  padding: 18px;
+  margin-left:auto;
+  margin-right:auto;
+  background:transparent;
+  max-width:400px;
+ 
+}
+.popbox_container a{
+  transition: all 1s ease;
+}
+.popbox_container a:hover{
+  color:darkgray;
+  letter-spacing: 3px;
+}
+
+.burger{
+  height: 30px;
+  width: 40px;
+  border-top: solid 4px white;
+  border-bottom: solid 4px white;
+
+}
+
+.burgerin{
+  margin-top:9px;
+  width: 40px;
+  border-top: solid 4px white;
+}
+.popbox button{
+  background: transparent;
+  font-family: gothic; 
+  color:white;
+  font-size: 0.7em;
+  border:none ;
+  margin-top: 30px;
+  cursor:pointer;
+  transition: all 1s ease;
+}
+.popbox button:hover{
+  color:black;
+  font-weight: bold;
+}
+
+/*-----------------------------*/
+
+
+
+/*가로길이 1480이상일때*/
+@media screen and (min-width: 1480px) {
+	.imgcon{
+  		width: 1290px; margin: auto
+  	}
+
+  .example-image{
+			width: 300px;
+			margin: 10px;
+			border-radius: 5px;
+			border:white solid 2px;
+			transition: all 0.5s ease;
+
+		}
+		.example-image:hover{
+			border:skyblue solid 2px;
+		}
+
+		.fixedheader{
+			position: fixed;
+			display: inline-block;
+			width: 100%;
+			height: 100px;
+		}
+		.spacer{
+			width: 100%;
+			height: 100px;
+		}
+}
+
+
+
+/*가로길이 1480미만일때*/
+@media screen and (max-width: 1479px){
+.imgcon{
+  		width: 1000px; margin: auto
+  	}
+
+  .example-image{
+			width: 300px;
+			margin: 10px;
+			border-radius: 5px;
+			border:white solid 2px;
+			transition: all 0.5s ease;
+
+		}
+		.example-image:hover{
+			border:skyblue solid 2px;
+		}
+
+		.fixedheader{
+			position: fixed;
+			display: inline-block;
+			width: 100%;
+			height: 100px;
+		}
+		.spacer{
+			width: 100%;
+			height: 100px;
+		}
+}	
+/*가로길이 1250 미만일때*/
+@media screen and (max-width: 1149px){
+.imgcon{
+  		width: 645px; margin: auto
+  	}
+
+  .example-image{
+			width: 300px;
+			margin: 10px;
+			border-radius: 5px;
+			border:white solid 2px;
+			transition: all 0.5s ease;
+
+		}
+		.example-image:hover{
+			border:skyblue solid 2px;
+		}
+
+		.fixedheader{
+			position: fixed;
+			display: inline-block;
+			width: 100%;
+			height: 100px;
+		}
+		.spacer{
+			width: 100%;
+			height: 100px;
+		}
+}	
+
+
+	</style>
+
+
+</head>
+<body>
+<script type="text/javascript">//원랜덤생성
+var i = 1;
+
+addCircles();
+
+function addCircles() {
+if(i<40){ // 재귀호출 사용, 40번 반복
+  ++i
+    setTimeout(() => {
+      addCircle(...randomPosition());
+    addCircles();
+    }, 100);
+  }
+}
+
+function addCircle(x, y) {//x값과 y값을 받아서 점점커졌다 사라지는 원을 생성
+  var circle = document.createElement('div');//div 이용한 원 생성
+  var animationTime = Math.round(Math.random() * 5);
+  circle.classList.add('circle'); //원에 circle클래스 추가
+  circle.style.left = x + 'vw'; //좌표지정
+  circle.style.top = y + 'vh'; //좌표지정
+  circle.style.backgroundColor = randomColor(); //색 지정
+  circle.style.setProperty('--grow-time', `${animationTime}s`);//애니메이션 시간
+
+  requestAnimationFrame(() => {
+    document.body.appendChild(circle);
+    setTimeout(removeCircle.bind(this, circle), animationTime * 1000);
+    //animation time*1000만큼의 딜레이 후 removeCircle함수 실행
+  });
+}
+
+function removeCircle(circle) {//divcircle삭제
+  document.body.removeChild(circle);
+}
+
+function randomPosition() { //좌표 랜덤값 리턴
+  return [
+  Math.random() * 100 + 1,
+  Math.random() * 100 + 1];
+
+}
+
+function randomColor() {//배열내 색중 랜덤하게 하나를 리턴
+  const colors = [
+  '#81ecec',
+  '#74b9ff',
+  '#a29bfe',
+  '#ffeaa7',
+  '#fab1a0',
+  '#ff7675',
+  '#fd79a8'];
+
+
+  return colors[Math.round(Math.random() * colors.length)];
+}
+</script>
+
+<p class="fixedheader">
+  <div data-popbox-id="mypopbox1" class="popbox">
+   <div class="popbox_container">
+    <!--html의 a를 이용한 페이지 이동이 작동을 안해서 함수로 사용함.-->
+    <a href="index.html" onclick="function1()">1.main</a><br>
+    <a href="" onclick="function2()">2.gallery</a><br>
+    <a href="" onclick="function3()">3.album</a><br>
+    <button data-popbox-close="mypopbox1">Close</button>
+   </div>
+ </div>
+
+ <div class="popbox_main_content">
+  
+  <button data-popbox-target="mypopbox1">
+  	<div class="burger">
+        <div class="burgerin"></div>
+    </div>
+  </button>
+    
+ </div>
+</p>
+<div class="spacer"></div>
+<div class="imgcon" style="">
+<a class="example-image-link" href="img/sapphire.jpg" data-lightbox="example-set" data-title="사파이어">
+  <img class="example-image" src="img/sapphire.jpg" style="width: 625px">
+</a>
+<a class="example-image-link" href="img/heartiz-violeta-izone.jpg" data-lightbox="example-set" data-title="비올레타">
+  <img class="example-image" src="img/heartiz-violeta-izone.jpg" style="width: 625px">
+</a>
+<a class="example-image-link" href="img/lavien.jpg" data-lightbox="example-set" data-title="라비앙로즈">
+  <img class="example-image" src="img/lavien.jpg" style="width: 625px">
+</a>
+<a class="example-image-link" href="img/won.jpg" data-lightbox="example-set" data-title="장원영">
+  <img class="example-image" src="img/won.jpg">
+</a>
+<a class="example-image-link" href="img/saku.gif" data-lightbox="example-set" data-title="미야와키 사쿠라">
+  <img class="example-image" src="img/saku.gif">
+</a>
+<a class="example-image-link" href="img/yuri.jpg" data-lightbox="example-set" data-title="조유리">
+  <img class="example-image" src="img/yuri.jpg" >
+</a>
+<a class="example-image-link" href="img/yena.gif" data-lightbox="example-set" data-title="최예나">
+  <img class="example-image" src="img/yena.gif" >
+</a>
+<a class="example-image-link" href="img/yujin.jpg" data-lightbox="example-set" data-title="안유진">
+  <img class="example-image" src="img/yujin.jpg" >
+</a>
+<a class="example-image-link" href="img/nako.gif" data-lightbox="example-set" data-title="야부키 나코">
+  <img class="example-image" src="img/nako.gif" >
+</a>
+<a class="example-image-link" href="img/eunbi.gif" data-lightbox="example-set" data-title="권은비">
+  <img class="example-image" src="img/eunbi.gif" >
+</a>
+<a class="example-image-link" href="img/hye.jpg" data-lightbox="example-set" data-title="강혜원">
+  <img class="example-image" src="img/hye.jpg" >
+</a>
+<a class="example-image-link" href="img/hito.jpg" data-lightbox="example-set" data-title="혼다 히토미">
+  <img class="example-image" src="img/hito.jpg" >
+</a>
+<a class="example-image-link" href="img/chaewon.jpg" data-lightbox="example-set" data-title="김채원">
+  <img class="example-image" src="img/chaewon.jpg" >
+</a>
+<a class="example-image-link" href="img/minjoo.gif" data-lightbox="example-set" data-title="김민주">
+  <img class="example-image" src="img/minjoo.gif" >
+</a>
+<a class="example-image-link" href="img/chaeyeon.jpg" data-lightbox="example-set" data-title="이채연">
+  <img class="example-image" src="img/chaeyeon.jpg" >
+</a>
+</div>
+
+
+
+<script type="text/javascript" src="js/lightbox-plus-jquery.js"></script>
+<script type="text/javascript" src="js/jquery.masonry.min.js"></script>
+<script type="text/javascript">
+		$(document).ready( function() {
+			$('.imgcon').imagesLoaded( function(){
+				$('.imgcon').masonry({
+						itemSelector:'.example-image-link',
+						columnWidth:5,
+						isAnimated:true,
+						FitWidth: true
+				});
+			});
+		});
+	</script>
+<script src="js/popbox.js">
+  //팝업박스
+</script>
+<script type="text/javascript">//팝업박스
+var popbox = new Popbox({
+      blur:true,
+});
+</script>
+<script type="text/javascript">
+  function function1(){
+  		window.location.replace('index.html');
+  }
+  function function2(){
+  		window.location.replace('gallery.html');
+  }
+  function function3(){
+  		window.location.replace('album.html');
+  }
+</script>
+
+</body>
+</html>
